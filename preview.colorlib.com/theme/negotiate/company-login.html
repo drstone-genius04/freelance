@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group select {
+            height: 40px;
+        }
+
+        .form-group .textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        .form-group .verify-otp-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .linkedIn-style-section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NGO/Firm Registration</h1>
+        <form>
+            <!-- PROFILE PHOTO UPLOAD (Optional) -->
+            <div class="form-group">
+                <label for="profile-photo">Profile Photo</label>
+                <input type="file" id="profile-photo" accept="image/*">
+            </div>
+
+            <!-- NAME (Name of NGO/Firm) -->
+            <div class="form-group">
+                <label for="ngo-name">Name of NGO/Firm</label>
+                <input type="text" id="ngo-name" required>
+            </div>
+
+            <!-- DATE OF SETUP (Dropdown Calendar) -->
+            <div class="form-group">
+                <label for="date-of-setup">Date of Setup</label>
+                <input type="date" id="date-of-setup" required>
+            </div>
+
+            <!-- LOCATION (State, City, Pincode) -->
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" required>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" required>
+            </div>
+
+            <!-- OFFICIAL MOBILE NUMBER (Verify with OTP) -->
+            <div class="form-group">
+                <label for="official-mobile">Official Mobile Number</label>
+                <input type="tel" id="official-mobile" required>
+                <button class="verify-otp-button" style="margin-top: 0.5rem";>Verify with OTP</button>
+            </div>
+
+            <!-- OFFICIAL EMAIL ID (Verify with OTP) -->
+            <div class="form-group">
+                <label for="official-email">Official Email ID</label>
+                <input type="email" id="official-email" required>
+                <button class="verify-otp-button" style="margin-top: 0.5rem;">Verify with OTP</button>
+            </div>
+
+            <!-- OFFICIAL ADDRESS (Four to Five Lines) -->
+            <div class="form-group">
+                <label for="official-address">Official Address</label>
+                <textarea class="textarea" id="official-address" rows="5" required></textarea>
+            </div>
+
+            <!-- DESCRIPTION (250 Words, Optional) -->
+            <div class="form-group">
+                <label for="description">Description (250 Words)</label>
+                <textarea class="textarea" id="description" rows="4"></textarea>
+            </div>
+
+            <!-- CAREER / EXPERIENCE (Optional, LinkedIn-style section) -->
+            <div class="linkedIn-style-section">
+                <h2>Career / Experience</h2>
+                <!-- Add LinkedIn-like career/experience fields here -->
+            </div>
+
+            <!-- CURRENTLY MEMBER IN HOW MANY COMMITTEES -->
+            <div class="form-group">
+                <label for="committees">Currently a Member in How Many Committees</label>
+                <input type="number" id="committees" min="0">
+            </div>
+            <div class="form-group">
+                <h2>Services & Charges</h2>
+                <label for="service-name">Name of Service</label>
+                <input type="text" id="service-name">
+                <label for="service-description">Description</label>
+                <textarea class="textarea" id="service-description" rows="3"></textarea>
+                <label for="service-cost">Cost or Request for Cost</label>
+                <input type="text" id="service-cost">
+                <label for="service-type">Type of Service</label>
+                <input type="text" id="service-type">
+            </div>
+
+            <!-- CURRENT TOP FIVE CLIENTS (Optional) -->
+            <div class="form-group">
+                <h2>Current Top Five Clients</h2>
+                <label for="client-name1">1. Name of Client</label>
+                <input type="text" id="client-name1">
+                <label for="client-name2">2. Name of Client</label>
+                <input type="text" id="client-name2">
+                <label for="client-name3">3. Name of Client</label>
+                <input type="text" id="client-name3">
+                <label for="client-name4">4. Name of Client</label>
+                <input type="text" id="client-name4">
+                <label for="client-name5">5. Name of Client</label>
+                <input type="text" id="client-name5">
+            </div>
+
+            <!-- NUMBER OF MEMBERS / EMPLOYEES (Compulsory) -->
+            <div class="form-group">
+                <label for="members-count">Number of Members / Employees</label>
+                <input type="number" id="members-count" min="0" required>
+                <label for="members-uid">List of UIDs (If Registered on Our Portal)</label>
+                <input type="text" id="members-uid">
+            </div>
+
+            <!-- DOCUMENTS PROOF (Compulsory) -->
+            <div class="form-group">
+                <label for="documents-proof">Upload Documents (e.g., PAN, Govt Authority Certificate)</label>
+                <input type="file" id="documents-proof" accept=".pdf, .doc, .docx" required>
+            </div>
+
+            <!-- Unique ID Based on Basic Details (Name, Date of Setup, Document, etc.) -->
+           
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
