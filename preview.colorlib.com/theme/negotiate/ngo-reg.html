@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group select {
+            height: 40px;
+        }
+
+        .form-group .textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        .form-group .verify-otp-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .linkedIn-style-section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NGO/Firm Registration</h1>
+        <form>
+            <!-- PROFILE PHOTO UPLOAD (Optional) -->
+            
+
+            <!-- NAME (Name of NGO/Firm) -->
+            <div class="form-group">
+                <label for="ngo-name">Name of NGO/Firm</label>
+                <input type="text" id="ngo-name" required>
+            </div>
+
+            <!-- DATE OF SETUP (Dropdown Calendar) -->
+            <div class="form-group">
+                <label for="date-of-setup">Date of Setup</label>
+                <input type="date" id="date-of-setup" required>
+            </div>
+
+            <!-- LOCATION (State, City, Pincode) -->
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" required>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" required>
+            </div>
+
+            <!-- OFFICIAL MOBILE NUMBER (Verify with OTP) -->
+            <div class="form-group">
+                <label for="official-mobile">Official Mobile Number</label>
+                <input type="tel" id="official-mobile" required>
+                <button class="verify-otp-button" style="margin-top: 0.5rem";>Verify with OTP</button>
+            </div>
+
+            <!-- OFFICIAL EMAIL ID (Verify with OTP) -->
+            <div class="form-group">
+                <label for="official-email">Official Email ID</label>
+                <input type="email" id="official-email" required>
+                <button class="verify-otp-button" style="margin-top: 0.5rem;">Verify with OTP</button>
+            </div>
+
+            <!-- OFFICIAL ADDRESS (Four to Five Lines) -->
+            <div class="form-group">
+                <label for="official-address">Official Address</label>
+                <textarea class="textarea" id="official-address" rows="5" required></textarea>
+            </div>
+
+            
+
+            
+         
+
+            
+
+            <!-- NUMBER OF MEMBERS / EMPLOYEES (Compulsory) -->
+            <div class="form-group">
+                <label for="members-count">Number of Members / Employees</label>
+                <input type="number" id="members-count" min="0" required>
+                <label for="members-uid"style="margin-top:1rem">List of UIDs (If Registered on Our Portal)</label>
+                <input type="text" id="members-uid">
+            </div>
+
+            <!-- DOCUMENTS PROOF (Compulsory) -->
+            <div class="form-group">
+                <label for="documents-proof">Upload Documents (e.g., PAN, Govt Authority Certificate)</label>
+                <input type="file" id="documents-proof" accept=".pdf, .doc, .docx" required>
+            </div>
+
+            <!-- Unique ID Based on Basic Details (Name, Date of Setup, Document, etc.) -->
+           
+            <!-- Submit Button -->
+            <div class="form-group">
+                <a href="company-login.html"><button type="submit">Submit</button></a> 
+            </div>
+        </form>
+    </div>
+</body>
+</html>
