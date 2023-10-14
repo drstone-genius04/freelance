@@ -46,13 +46,31 @@
         </style>
     </head>
     <body>
-        <form>
+        <form id="loginForm">
             <h2> NGO Login</h2>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <a href="company-profile.html"><button type="submit" style="background-color: #4CAF50;">Submit</button></a> 
+            <a href="company-profile.html"><button type="submit"onlclick="window.location.href='company-profile.html'" style="background-color: #4CAF50;">Submit</button></a> 
         </form>
+        <script>
+            // JavaScript code to handle form submission
+            document.getElementById('loginForm').addEventListener('submit', function (e) {
+                // Prevent the form from being submitted
+                e.preventDefault();
+    
+                // Check if both fields are filled
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+    
+                if (username && password) {
+                    // If both fields are filled, redirect to ngo-profile.html
+                    window.location.href = 'ngo-profile.html';
+                } else {
+                    alert('Please fill in both fields.');
+                }
+            });
+        </script>
     </body>
 </html>

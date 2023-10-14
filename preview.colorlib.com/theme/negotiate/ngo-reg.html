@@ -75,7 +75,7 @@
 <body>
     <div class="container">
         <h1>NGO/Firm Registration</h1>
-        <form>
+        <form id="registrationForm">
             <!-- PROFILE PHOTO UPLOAD (Optional) -->
             
 
@@ -150,9 +150,32 @@
            
             <!-- Submit Button -->
             <div class="form-group">
-                <a href="company-login.html"><button type="submit">Submit</button></a> 
+                <a href="company-login.html"><button type="submit" id="submitButton">Submit</button></a> 
             </div>
         </form>
     </div>
+    <script>
+        // JavaScript code to handle form submission
+        document.getElementById('submitButton').addEventListener('click', function () {
+            // Check if all required fields are filled
+            var ngoName = document.getElementById('ngo-name').value;
+            var dateOfSetup = document.getElementById('date-of-setup').value;
+            var state = document.getElementById('state').value;
+            var city = document.getElementById('city').value;
+            var pincode = document.getElementById('pincode').value;
+            var officialMobile = document.getElementById('official-mobile').value;
+            var officialEmail = document.getElementById('official-email').value;
+            var officialAddress = document.getElementById('official-address').value;
+            var membersCount = document.getElementById('members-count').value;
+            var documentsProof = document.getElementById('documents-proof').value;
+
+            if (ngoName && dateOfSetup && state && city && pincode && officialMobile && officialEmail && officialAddress && membersCount && documentsProof) {
+                // If all required fields are filled, redirect to company-login.html
+                window.location.href = 'company-login.html';
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    </script>
 </body>
 </html>

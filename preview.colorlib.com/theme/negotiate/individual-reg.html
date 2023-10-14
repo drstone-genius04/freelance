@@ -81,11 +81,11 @@
 <body>
     <div class="container">
         <h1>Consultant Registration</h1>
-        <form>
+        <form id="registrationForm">
             
 
             <!-- NAME (First Name, Middle Name, Last Name) -->
-            <div class="form-group">
+            <div class="form-group" >
                 <label for="first-name">First Name</label>
                 <input type="text" id="first-name" required>
             </div>
@@ -258,10 +258,31 @@
     
             <!-- Submit Button -->
             <div class="form-group" style="margin-top: 1rem;">
-               <a href="consultant-login.html"><button type="submit">Submit</button></a> 
+                <button type="button" id="submitButton">Submit</button>
             </div>
         </form>
     </div>
+    <script>
+        // JavaScript code to handle form submission
+        document.getElementById('submitButton').addEventListener('click', function () {
+            // Check if all required fields are filled
+            var firstName = document.getElementById('first-name').value;
+            var lastName = document.getElementById('last-name').value;
+            var dob = document.getElementById('date-of-birth').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var state = document.getElementById('state').value;
+            var city = document.getElementById('city').value;
+            var mobileNumber = document.getElementById('mobile-number').value;
+            var email = document.getElementById('email').value;
+
+            if (firstName && lastName && dob && gender && state && city && mobileNumber && email) {
+                // If all required fields are filled, redirect to consultant-login.html
+                window.location.href = 'consultant-login.html';
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    </script>
 </body>
 </html>
         
