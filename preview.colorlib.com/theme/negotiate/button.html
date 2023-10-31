@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the main container */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            
+        }
+
+        /* Style for the left section with "Posh Associate" button and sub-buttons */
+        .left-section {
+            width: 50%;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #2ECC71; /* Change button color to green for "Posh Associate" */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .main-button:hover {
+            background-color: #27AE60; /* Change button hover color */
+        }
+
+        .sub-buttons {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .sub-button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #0074D9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .sub-button:hover {
+            background-color: #0056a6;
+        }
+
+        /* Style for the right section with the "Establishment" button */
+        .right-section {
+            width: 50%;
+            text-align: right;
+        }
+
+        .establishment-button {
+            padding: 10px 20px;
+            background-color: #9B59B6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .establishment-button:hover {
+            background-color: #7D3C8A;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <button class="main-button">Posh Associate</button>
+            <div class="sub-buttons">
+                <button class="sub-button">Button 1</button>
+                <button class="sub-button">Button 2</button>
+                <button class="sub-button">Button 3</button>
+            </div>
+        </div>
+        <div class="right-section">
+            <button class="establishment-button">Establishment</button>
+        </div>
+    </div>
+</body>
+</html>
