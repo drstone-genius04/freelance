@@ -12,22 +12,17 @@
         }
 
         .form-group {
-            flex: 1;
-            margin-left: 1rem;
-
-        }
-        .form-row {
-            display: flex;
-            justify-content: space-between;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
             font-weight: bold;
-            
         }
 
         .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"],
         .form-group select {
             width: 100%;
             padding: 10px;
@@ -39,26 +34,6 @@
             height: 40px;
         }
 
-        .form-group .radio-group {
-            display: flex;
-        }
-
-        .form-group .radio-group label {
-            margin-right: 10px;
-        }
-
-        .form-group button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .form-group button:hover {
-            background-color: #0056b3;
-        }
         .form-group .textarea {
             width: 100%;
             padding: 10px;
@@ -77,58 +52,52 @@
             margin-left: 10px;
         }
 
-        /* Additional CSS for LinkedIn-like sections */
         .linkedIn-style-section {
             border: 1px solid #ccc;
             padding: 20px;
             margin-bottom: 20px;
         }
+
+        .form-group button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 style="margin-left: 1rem;"> Individual Registration</h1>
+        <h1>Consultancy Registration</h1>
         <form id="registrationForm">
+            <!-- PROFILE PHOTO UPLOAD (Optional) -->
             
 
-            <!-- NAME (First Name, Middle Name, Last Name) -->
-            <div class="form-row">
-                <div class="form-group" style="margin: 1rem;">
-                    <label for="first-name">First Name</label>
-                    <input type="text" id="first-name" required >
-                </div>
-                <div class="form-group" style="margin: 1rem;">
-                    <label for="middle-name" >Middle Name</label>
-                    <input type="text" id="middle-name" >
-                </div>
-                <div class="form-group" style="margin: 1rem;">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" required >
-                </div>
-            </div>
+            <!-- NAME (Name of NGO/Firm) -->
+            <div class="form-group">
+                <label for="ngo-name">Name of NGO/Firm</label>
+                <input type="text" id="ngo-name" required>
+            </div> 
 
-            <!-- DATE OF BIRTH (Dropdown Calendar) -->
-            <div class="form-group" style="margin: 1rem;">
-                <label for="date-of-birth">Date of Birth</label>
-                <input type="date" id="date-of-birth" required>
+            <!-- DATE OF SETUP (Dropdown Calendar) -->
+            <div class="form-group" >
+                <label for="date-of-setup">Date of Setup</label>
+                <input type="date" id="date-of-setup" required>
             </div>
-
-            <!-- GENDER (Male, Female, Others) -->
-            <div class="form-group" style="margin: 1rem;">
-                <label>Gender</label>
-                <div class="radio-group">
-                    <label><input type="radio" name="gender" value="Male" required> Male</label>
-                    <label><input type="radio" name="gender" value="Female" required> Female</label>
-                    <label><input type="radio" name="gender" value="Others" required> Others</label>
-                </div>
-            </div>
-
-            <!-- MARITAL STATUS (Married, Unmarried, Others) -->
-            
 
             <!-- LOCATION (State, City, Pincode) -->
             <div class="form-row">
-                <div class="form-group">
+                <div class="form-group" style="margin: 0.5rem;"> 
                     <label for="state">State</label>
                     <select id="state">
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -161,7 +130,7 @@
                         <option value="West Bengal">West Bengal</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin: 0.5rem;">
                     <label for="city">City</label>
                     <select id="city">
                         <option value="Hyderabad">Hyderabad</option>
@@ -246,35 +215,59 @@
                        
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin: 0.5rem;">
                     <label for="pincode">Pincode</label>
                     <input type="text" id="pincode">
                 </div>
             </div>
             
-            
-            
-            <div class="form-group" style="margin: 1rem;">
-                <label for="mobile-number">Mobile Number</label>
-                <input type="tel" id="mobile-number" required>
-                <button class="verify-otp-button">Verify with OTP</button>
-            </div>
-    
-            <!-- EMAIL ID (Verify with OTP) -->
+
+            <!-- OFFICIAL MOBILE NUMBER (Verify with OTP) -->
             <div class="form-group">
-                <label for="email">Email ID</label>
-                <input type="email" id="email" required>
-                <button class="verify-otp-button">Verify with OTP</button>
+                <label for="official-mobile">Official Mobile Number</label>
+                <input type="tel" id="official-mobile" required>
+                <button class="verify-otp-button" style="margin-top: 0.5rem";>Verify with OTP</button>
             </div>
-    
-            <!-- AADHAAR CARD Verification (To be initiated in later phase) -->
+
+            <!-- OFFICIAL EMAIL ID (Verify with OTP) -->
+            <div class="form-group">
+                <label for="official-email">Official Email ID</label>
+                <input type="email" id="official-email" required>
+                <button class="verify-otp-button" style="margin-top: 0.5rem;">Verify with OTP</button>
+            </div>
+
+            <!-- OFFICIAL ADDRESS (Four to Five Lines) -->
+            <div class="form-group">
+                <label for="official-address">Official Address</label>
+                <textarea class="textarea" id="official-address" rows="5" required></textarea>
+            </div>
+
             
-            <!-- Educational Background (LinkedIn-style) -->
+
             
-    
+         
+
+            
+
+            <!-- NUMBER OF MEMBERS / EMPLOYEES (Compulsory) -->
+            <div class="form-group">
+                <label for="members-count">Number of Members / Employees</label>
+                <input type="number" id="members-count" min="0" required>
+                <label for="members-uid"style="margin-top:1rem">List of UIDs (If Registered on Our Portal)</label>
+                <input type="text" id="members-uid">
+            </div>
+
+            <!-- DOCUMENTS PROOF (Compulsory) -->
+            <div class="form-group">
+                <label for="documents-proof">Upload Documents (e.g., PAN, Govt Authority Certificate)</label>
+                <input type="file" id="documents-proof" accept=".pdf, .doc, .docx" required>
+            </div>
+
+            <!-- Unique ID Based on Basic Details (Name, Date of Setup, Document, etc.) -->
+           
             <!-- Submit Button -->
-            <div class="form-group" style="margin-top: 3rem;">
-                <button type="button" id="submitButton">Submit</button>
+            <div class="form-group">
+                <a href="company-login.html"><button type="submit" id="submitButton">Submit</button></a> 
             </div>
         </form>
     </div>
@@ -282,18 +275,20 @@
         // JavaScript code to handle form submission
         document.getElementById('submitButton').addEventListener('click', function () {
             // Check if all required fields are filled
-            var firstName = document.getElementById('first-name').value;
-            var lastName = document.getElementById('last-name').value;
-            var dob = document.getElementById('date-of-birth').value;
-            var gender = document.querySelector('input[name="gender"]:checked');
+            var ngoName = document.getElementById('ngo-name').value;
+            var dateOfSetup = document.getElementById('date-of-setup').value;
             var state = document.getElementById('state').value;
             var city = document.getElementById('city').value;
-            var mobileNumber = document.getElementById('mobile-number').value;
-            var email = document.getElementById('email').value;
+            var pincode = document.getElementById('pincode').value;
+            var officialMobile = document.getElementById('official-mobile').value;
+            var officialEmail = document.getElementById('official-email').value;
+            var officialAddress = document.getElementById('official-address').value;
+            var membersCount = document.getElementById('members-count').value;
+            var documentsProof = document.getElementById('documents-proof').value;
 
-            if (firstName && lastName && dob && gender && state && city && mobileNumber && email) {
-                // If all required fields are filled, redirect to consultant-login.html
-                window.location.href = 'consultant-login.html';
+            if (ngoName && dateOfSetup && state && city && pincode && officialMobile && officialEmail && officialAddress && membersCount && documentsProof) {
+                // If all required fields are filled, redirect to company-login.html
+                window.location.href = 'company-login.html';
             } else {
                 alert('Please fill in all required fields.');
             }
@@ -301,5 +296,3 @@
     </script>
 </body>
 </html>
-        
-          
