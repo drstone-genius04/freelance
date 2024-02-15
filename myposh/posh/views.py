@@ -2,6 +2,12 @@ from django.shortcuts import render
 from django.views import View
 
 # Create your views here.
+def aboutUs(request):
+    return render(request, 'about.html')
+def contactUs(request):
+    return render(request, 'contact.html')
+def services(request):
+    return render(request, 'services.html')
 
 class indexPage(View):
     template_name = 'index.html'
