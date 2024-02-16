@@ -62,8 +62,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'myposh.apps.posh'
+                'django.contrib.messages.context_processors.messages'
             ],
         },
     },
@@ -120,16 +119,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / "static",
+    os.path.join(BASE_DIR,'posh','static')
     
 ]
-STATIC_ROOT = "/var/www/example.com/static/"
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# STATICFILES_DIRS = [
-#     BASE_DIR / "posh/static",
-# ]
