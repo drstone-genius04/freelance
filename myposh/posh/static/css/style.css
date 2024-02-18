@@ -3423,3 +3423,8 @@ textarea.form-control {
       margin-top: 0;
   }
   
+  .background-image-link {
+    background-image: url('images/image_1.jpg');
+    /* Additional CSS properties as needed */
+    /* width, height, display, etc. */
+}
